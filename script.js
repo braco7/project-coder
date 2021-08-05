@@ -2,97 +2,70 @@
 
 class Persona {
     constructor(id, nombre, apellido, email) {
-        this.id = id
-        this.nombre = nombre
-        this.apellido = apellido
-        this.email = email
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
     }
 }
 
-// Declaracion de clases Cita y hora disponible:
+// Creamos 5 objetos "persona"
+const juan = new Persona(1, "Juan", "Gómez", "juan@juan.com")
+const pedro = new Persona(2, "Pedro", "Schiaffino", "pedro@pedro.com")
+const maria = new Persona(3, "Maria", "Robles", "maria@maria.com")
+const federico = new Persona(4, "Federico", "Mendiolaza", "federico@federico.com")
+const francisco = new Persona(5, "Francisco", "Ariza", "francisco@francisco.com")
 
-let ulJuly = document.getElementById("july");
-let liJuly = ulJuly.getElementsByTagName("li");
-console.log(liJuly)
+// Llenamos el array
+const personas = [juan, pedro, maria, federico, francisco]
 
-let ulAugust = document.getElementById("august");
-let liAugust = ulAugust.getElementsByTagName("li")
-console.log(liAugust)
+let mail = "";
+let password = "";
+let chosenDate;
+let choosenTime = "";
 
-let ulSeptember = document.getElementById("september");
-let liSeptember = ulSeptember.getElementsByTagName("li");
-console.log(liSeptember)
-
-
-class DiaDisp {
-    constructor(id, day) {
-        this.id = id
-        this.day = day
-    }
-}
-class HoraDisp {
-    constructor(id,hora) {
-        this.id = id
-        this.hora = hora
-    }
-}
-
-Persona.nombre = "Juan"
-Persona.apellido = "Lopez"
-let mail = ""
-let password = ""
-
-function getMail() {
-    mail = document.getElementById("email").value
-    console.log(mail)
+mail = function getMail() {
+    return document.getElementById("email").value
 }
 
 function getPw() {
     password = document.getElementById("password").value
-    console.log(password)
-}
 
-function registrar() {
-    Persona.mail && Persona.password? document.write(`Usted esta aqui`) : getMail();
-}
-
-function capturarDatos() {
-    document.write(`Se hinchan las quetejedi`)
 }
 
 
+function getDate() {
+    choosenDate = document.getElementById("fecha").value
 
+}
 
+function getTime() {
+    choosenTime = document.getElementById("hora").value
 
+}
 
+// Validamos que el correo introducido en el campo existe en el array de objetos
+function buscarPersona() {
+    if (personas.some(x => x.email == mail)) {
+        let bannerExiste = document.createElement("li")
+        bannerExiste.innerText = `Bienvenido(a)` // Se le da la bienvenida y mostramos el menu de fecha y hora
+        let listaDeBanner = document.getElementById("personaexiste")
+        listaDeBanner.appendChild(bannerExiste)
+        let secForm = document.getElementById("secform")
+        secForm.style.display = "block"
+    }
+    else {
+        let bannerNoExiste = document.createElement("li")
+        bannerNoExiste.innerText = "Usted Debe registrarse" // Mandato de registrarse ( a ser desarrollado)
+        let listaDeBannerNo = document.getElementById("personaexiste")
+        listaDeBannerNo.appendChild(bannerNoExiste)
+    }
 
+}
 
-
-/* Armado y llenado de arrays con fechas y horas disponibles:
-Fechas disponibles:
-const diasDisp = []
-diasDisp.push(new DiaDisp(1,"Lunes 26 de Julio"))
-diasDisp.push(new DiaDisp(2,"Miércoles 28 de Julio"))
-diasDisp.push(new DiaDisp(3,"Viernes 30 de Julio"))
-
-Horas disponibles
-const horasDisp = []
-horasDisp.push(new HoraDisp(1,"08:00 hs"))
-horasDisp.push(new HoraDisp(2,"10:00 hs"))
-horasDisp.push(new HoraDisp(3,"14:00 hs"))
-
- Pedimos datos de la persona creando el objeto y asignando su valor
-a la variable "persona": 
-let persona = new Persona (1,prompt("Introduzca su nombre"), prompt("Introduzca su apellido"), prompt("Email: "))
- Desplegamos las fechas disponibles:
-
-let fecha = prompt(`Escoja la fecha: \n1.- ${diasDisp[0].day}\n2.- ${diasDisp[1].day}\n3.- ${diasDisp[2].day}\n`)
-let hora = prompt(`Escoja una hora: \n1.- ${horasDisp[0].hora}\n2.- ${horasDisp[1].hora}\n3.- ${horasDisp[2].hora}\n`)
-
-Aplicamos metodo find para encontrar en el array el item 
-correspondiente de acuerdo a la opción escogida por el usuario
-let fecha1 = diasDisp.find(x => x.id == fecha)
-let hora1 = horasDisp.find(x => x.id == hora)
-
-Se despliegan los datos de la reserva en alert:
-alert(`Hola ${persona.nombre}, usted ha sido reservado para el dia ${fecha1.day} a las ${hora1.hora}`) */
+function submit2() {
+    let newEvent = document.createElement("li")
+    newEvent.innerText = `Usted ha sido reservado para el dia ${choosenDate} a las ${choosenTime}`
+    let listaDeEvento = document.getElementById("events")
+    listaDeEvento.appendChild(newEvent)
+}

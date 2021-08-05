@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <h1 style = "text-align:center; margin-top:60px">Reservación de citas</h1>
   <div class="container">
     <div class="login">
       <div class="row">
@@ -20,7 +21,7 @@
         <!-- Formulario de inicio -->
         <div class="col-md-12">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" placeholder="youremail@mail.com" onblur="getMail()">
+          <input type="text" class="form-control" id="email" placeholder="mail@mail.com" onblur="getMail()">
           <br>
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" placeholder="password" onblur="getPw()">
@@ -28,17 +29,80 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <input type="reset" id="reset" value="Registrarse" class="btn btn-outline-primary btn-form" onclick="registrar()">
+          <input type="submit" id="register" value="Registrarse" class="btn btn-outline-primary btn-form" onclick="registrar()">
         </div>
         <div class="col-md-6" id="boton">
-          <input type="submit" id="register" value="Entrar" class="btn btn-outline-success btn-form" onclick="capturarDatos()">
+          <input type="submit" id="submit" value="Entrar" class="btn btn-outline-success btn-form" onclick="buscarPersona()">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 style = "display:none"> Bienvenido Fran </h1>
+
+  <ul id= "personaexiste">
+  </ul>
+  
+  <div class="container" style="display:none" id="secform">
+    <div class="login2">
+      <div class="row">
+        <h2>Escoja Fecha y Hora</h2>
+        <!-- Formulario de fecha y hora -->
+        <div class="col-md-12">
+          <label for="fecha">Fecha</label>
+          <input type="date" class="form-control" id="fecha" placeholder="Seleccione fecha" onblur="getDate()">
+          <br>
+          <label for="hora">Hora</label>
+          <input type="time" class="form-control" id="hora" placeholder="password" onblur="getTime()">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" id="boton">
+          <input type="submit" id="register" value="Entrar" class="btn btn-outline-success btn-form" onclick="submit2()">
         </div>
       </div>
     </div>
   </div>
 
-  <h1 class="titulo-principal">2021</h1>
-  <div class="calender">
+  <ul id="events">  
+  </ul>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+ <div class="calender">
     <div class="sep-calender">
       <h1>
         Julio
@@ -56,37 +120,37 @@
         <li class="previos">28</li>
         <li class="previos">29</li>
         <li class="previos">30</li>
-        <li><a href="">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-        <li><a href="">5</a></li>
-        <li><a href="">6</a></li>
-        <li><a href="">7</a></li>
-        <li><a href="">8</a></li>
-        <li><a href="">9</a></li>
-        <li><a href="">10</a></li>
-        <li><a href="">11</a></li>
-        <li><a href="">12</a></li>
-        <li><a href="">13</a></li>
-        <li><a href="">14</a></li>
-        <li><a href="">15</a></li>
-        <li><a href="">16</a></li>
-        <li><a href="">17</a></li>
-        <li><a href="">18</a></li>
-        <li><a href="">19</a></li>
-        <li><a href="">20</a></li>
-        <li><a href="">21</a></li>
-        <li><a href="">22</a></li>
-        <li><a href="">23</a></li>
-        <li><a href="">24</a></li>
-        <li><a href="">25</a></li>
-        <li><a href="">26</a></li>
-        <li><a href="">27</a></li>
-        <li><a href="">28</a></li>
-        <li><a href="">29</a></li>
-        <li><a href="">30</a></li>
-        <li><a href="">31</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j1">1</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j2">2</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j3">3</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j4">4</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j5">5</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j6">6</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j7">7</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j8">8</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j9">9</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j10">10</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j11">11</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j12">12</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j13">13</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j14">14</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j15">15</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j16">16</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j17">17</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j18">18</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j19">19</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j20">20</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j21">21</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j22">22</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j23">23</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j24">24</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j25">25</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j26">26</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j27">27</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j28">28</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j29">29</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j30">30</a></li>
+        <li><a href="#" onclick="diaEscogido()" id="j31">31</a></li>
       </ul>
     </div>
 
@@ -110,37 +174,37 @@
         <li class="previos">29</li>
         <li class="previos">30</li>
         <li class="previos">31</li>
-        <li><a href="">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-        <li><a href="">5</a></li>
-        <li><a href="">6</a></li>
-        <li><a href="">7</a></li>
-        <li><a href="">8</a></li>
-        <li><a href="">9</a></li>
-        <li><a href="">10</a></li>
-        <li><a href="">11</a></li>
-        <li><a href="">12</a></li>
-        <li><a href="">13</a></li>
-        <li><a href="">14</a></li>
-        <li><a href="">15</a></li>
-        <li><a href="">16</a></li>
-        <li><a href="">17</a></li>
-        <li><a href="">18</a></li>
-        <li><a href="">19</a></li>
-        <li><a href="">20</a></li>
-        <li><a href="">21</a></li>
-        <li><a href="">22</a></li>
-        <li><a href="">23</a></li>
-        <li><a href="">24</a></li>
-        <li><a href="">25</a></li>
-        <li><a href="">26</a></li>
-        <li><a href="">27</a></li>
-        <li class="dias"><a href="">28</a></li>
-        <li><a href="">29</a></li>
-        <li><a href="">30</a></li>
-        <li><a href="">31</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j1">1</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j2">2</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j3">3</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j4">4</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j5">5</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j6">6</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j7">7</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j8">8</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j9">9</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j10">10</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j11">11</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j12">12</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j13">13</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j14">14</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j15">15</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j16">16</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j17">17</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j18">18</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j19">19</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j20">20</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j21">21</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j22">22</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j23">23</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j24">24</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j25">25</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j26">26</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j27">27</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j28">28</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j29">29</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j30">30</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j31">31</a></li>
       </ul>
     </div>
     <div class="sep-calender">
@@ -159,40 +223,37 @@
       <ul class="date" id="september">
         <li class="previos">30</li>
         <li class="previos">31</li>
-        <li><a href="">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-        <li><a href="">5</a></li>
-        <li><a href="">6</a></li>
-        <li><a href="">7</a></li>
-        <li><a href="">8</a></li>
-        <li><a href="">9</a></li>
-        <li><a href="">10</a></li>
-        <li><a href="">11</a></li>
-        <li><a href="">12</a></li>
-        <li><a href="">13</a></li>
-        <li><a href="">14</a></li>
-        <li><a href="">15</a></li>
-        <li><a href="">16</a></li>
-        <li><a href="">17</a></li>
-        <li><a href="">18</a></li>
-        <li><a href="">19</a></li>
-        <li><a href="">20</a></li>
-        <li><a href="">21</a></li>
-        <li><a href="">22</a></li>
-        <li><a href="">23</a></li>
-        <li><a href="">24</a></li>
-        <li><a href="">25</a></li>
-        <li><a href="">26</a></li>
-        <li><a href="">27</a></li>
-        <li><a href="">28</a></li>
-        <li><a href="">29</a></li>
-        <li><a href="">30</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j1">1</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j2">2</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j3">3</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j4">4</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j5">5</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j6">6</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j7">7</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j8">8</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j9">9</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j10">10</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j11">11</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j12">12</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j13">13</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j14">14</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j15">15</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j16">16</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j17">17</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j18">18</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j19">19</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j20">20</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j21">21</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j22">22</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j23">23</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j24">24</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j25">25</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j26">26</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j27">27</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j28">28</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j29">29</a></li>
+        <li><a href="" onclick="diaEscogido()" id="j30">30</a></li>
       </ul>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-
-</html>
+  </div> 
+<h1 class="titulo-principal">2021</h1> -->
