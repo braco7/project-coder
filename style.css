@@ -3,14 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
-  }
+}
 
 body {
     background-color: rgb(252, 253, 228)!important;
 }
 
 .login {
-    background-color: rgb(191, 217, 224);
+    background-color: rgb(100, 200, 200);
     width: 50%;
     margin: 80px auto;
     border-radius: 10px;
@@ -24,30 +24,30 @@ body {
 }
 
 .login2 {
-  background-color: rgb(224, 165, 138);
-  width: 50%;
-  margin: 80px auto;
-  border-radius: 10px;
-  padding: 20px;
-  border-left: 0px solid #020008;
-  box-shadow: 0px 0px 0px 0px #02082c;
+    background-color: rgb(252, 148, 101);
+    width: 50%;
+    margin: 80px auto;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 0px solid #020008;
+    box-shadow: 0px 0px 0px 0px #02082c;
 }
 
 .login2>.row>h2 {
-  margin: auto;
+    margin: auto;
 }
 
 .btn-form {
     width: 100%;
     margin-top: 30px;
 }
-  
-  body {
+
+body {
     text-transform: uppercase;
-    background-color:rgb(192, 214, 207);
-  }
-  
-  .calender {
+    background-color: rgb(192, 214, 207);
+}
+
+.calender {
     display: flex;
     margin: 15vh auto;
     width: 98%;
@@ -55,51 +55,56 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 2rem;
-  }
-  
-  .sep-calender {
+}
+
+.sep-calender {
     box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2), -3 -3 10px 0 #fff;
     border-radius: 10px;
     padding: 10px;
-  }
-  
-  .sep-calender h1 {
+}
+
+.sep-calender h1 {
     text-align: center;
     padding: 1rem;
-  }
-  
-  .sep-calender ul{
+}
+
+.sep-calender ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     list-style: none;
-  }
-  
-  li {
+}
+
+.banner {
     list-style-type: none;
     padding: 5px;
     text-align: center;
-    background-color: rgb(148, 148, 219);
+    background-color: rgb(134, 223, 235);
     font-weight: 600;
-    width: 30%;
+    width: 60%;
     margin: auto;
-    border-radius: 10px;  
-  }
-  
-  li:nth-child(7n) {
+    border-radius: 10px;
+}
+
+li {
+    list-style-type: none;
+    padding: 5px;
+    text-align: center;
+    font-weight: 600;
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+li:nth-child(7n) {
     color: rgb(173, 2, 2);
-  }
-  
-  
-  .days {
-    background-color: rgb(191, 217, 224);
-  }
-  
-  .titulo-principal {
+}
+
+.titulo-principal {
     font-size: 5rem;
     text-align: center;
     margin-top: 4rem;
-  }
-  
-  .previos {
+}
+
+.previos {
     color: gray;
-  }
+}
