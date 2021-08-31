@@ -11,6 +11,44 @@ function proximoRegistro() {
 
 let objdeDatos = {};
 
+const DATOSJSON = "datos.json";
+
+function consulta() {
+    $.getJSON(DATOSJSON, function(response, estado) {
+        if (estado === "success") {
+            let datos = response;
+            $("#logform").fadeOut();
+            $("#secform").fadeOut();
+            $("#regform").fadeOut();
+            $("body").append(`
+        <div class="container">
+        <h2 style= "text-align: center; margin: 30px 20px"> Escoja una opción</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Especialidad</th>
+                  </tr>
+                </thead>
+            </table>
+        </div>`);
+            for (const i of datos) {
+                $("body").append(`
+        <div class="container">
+            <table class="table">
+                <tbody>
+                 <tr>
+                    <td>${i.nombre}</td>
+                    <td>${i.especialidad}</td>
+                 </tr>
+                </tbody>
+            </table>
+        </div>`);
+            }
+        }
+    });
+}
+
 //Función para poner efectos de fecha y hora para el usuario
 function dateAndTimePicker() {
     $("#fecha").datepicker({

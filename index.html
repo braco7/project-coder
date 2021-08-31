@@ -19,6 +19,21 @@
 </head>
 
 <body>
+    <div class="topnav">
+        <a href="#">Inicio</a>
+        <a href="#">Contacto</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="prof" data-bs-toggle="dropdown" aria-expanded="false">
+                Profesionales
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="prof">
+                <li><a class="dropdown-item" href="#">Cirujanos</a></li>
+                <li><a class="dropdown-item" href="#">Nutricionistas</a></li>
+                <li><a class="dropdown-item" href="#">Odontólogos</a></li>
+            </ul>
+        </div>
+    </div>
+
     <h1 style="text-align:center; margin-top:60px">Reservar cita</h1>
     <!-- Formulario de inicio -->
     <div class="container" style="display:block" id="logform">
@@ -93,6 +108,8 @@
             </div>
         </div>
     </div>
+    <!-- Tabla de profesionales  -->
+
 
     <ul id="events">
     </ul>

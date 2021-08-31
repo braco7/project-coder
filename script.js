@@ -11,4 +11,7 @@ $(function() {
     $("#regPersonas").on("click", () => {
         getYPush();
     });
+    $("#prof").on("click", () => {
+        consulta();
+    });
 });

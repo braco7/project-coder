@@ -1,0 +1,33 @@
+[{
+    "id": 0,
+    "nombre": "Luis Pelaez",
+    "especialidad": "cirujano"
+}, {
+    "id": 1,
+    "nombre": "Ana Gonzalez",
+    "especialidad": "odontologo"
+}, {
+    "id": 2,
+    "nombre": "Freddy Lares",
+    "especialidad": "cirujano"
+}, {
+    "id": 3,
+    "nombre": "Luisa de Pietri",
+    "especialidad": "cirujano"
+}, {
+    "id": 4,
+    "nombre": "Francisco Mugnaini",
+    "especialidad": "nutricionista"
+}, {
+    "id": 5,
+    "nombre": "Ernesto Cortez",
+    "especialidad": "odontologo"
+}, {
+    "id": 6,
+    "nombre": "Jose Terrence",
+    "especialidad": "nutricionista"
+}, {
+    "id": 7,
+    "nombre": "Graciela Osum",
+    "especialidad": "cirujano"
+}]
