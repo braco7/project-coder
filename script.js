@@ -10,5 +10,20 @@ $(function() {
     });
     $("#regPersonas").on("click", () => {
         getYPush();
+    });/* 
+    $("#prof").on("click", () => {
+        consulta(); 
+    });*/
+    $("#deFechaAtras").on("click", () => {
+        animarLogin();
+    });
+    $("#odontologos").on("click", () => {
+        consulta("odontologo");
+    });
+    $("#cirujanos").on("click", () => {
+        consulta("cirujano");
+    });
+    $("#nutricionistas").on("click", () => {
+        consulta("nutricionista");
     });
 });

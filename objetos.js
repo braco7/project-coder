@@ -37,3 +37,12 @@ let mail = localStorage.getItem("correo");
 let pwd = "";
 
 const personas = [juan, pedro, maria, federico, francisco];
+
+
+class Profesionales {
+    constructor(id, nombre, especialidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = especialidad;
+    }
+}

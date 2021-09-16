@@ -1,3 +1,6 @@
+let secForm = $("#secform");
+let regForm = $("#regform");
+
 if (localStorage.getItem("correo") !== null) {
     document.getElementById("email").placeholder = mail;
 }
@@ -9,7 +12,70 @@ function proximoRegistro() {
     return registro;
 }
 
+
+
 let objdeDatos = {};
+
+const DATOSJSON = "datos.json";
+const filtro = [];
+
+function consulta(a) {
+    $.getJSON(DATOSJSON, function(response, estado) {
+        if (estado === "success") {
+            let datos = response;
+            $("#logform").fadeOut();
+            $("#secform").fadeOut();
+            $("#regform").fadeOut();
+            $("body").append(`
+            <h2 style= "text-align: center; margin: 30px 20px"> Escoja una opción</h2>
+        <div class="tabla">
+            <table>
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Id</>
+                    <th>Nombre</th>
+                    <th>Especialidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>`);
+            for (const i of datos) {
+                filtro.push({id:i.id, nombre:i.nombre, especialidad:i.especialidad})
+            }
+                
+            let filtrado = filtro.filter(elemento => elemento.especialidad === a)
+            for (const i of filtrado) {
+                $("tbody").append(`
+                 <tr>
+                    <td>${i.id}</td>
+                    <td>${i.nombre}</td>
+                    <td>${i.especialidad}</td>
+                 </tr>`);
+            }
+        }
+    });
+}
+
+
+
+
+function consulta1() {
+    $.getJSON(DATOSJSON, function(response, estado) {
+        if (estado === "success") {
+            let datos = response;
+            for (const i of datos) {
+                $("tbody").append(`
+                 <tr>
+                    <td>${i.id+1}</td>
+                    <td>${i.nombre}</td>
+                    <td>${i.especialidad}</td>
+                 </tr>`);
+            }
+        }
+    });
+}
 
 //Función para poner efectos de fecha y hora para el usuario
 function dateAndTimePicker() {
@@ -60,20 +126,19 @@ function pushDatos(id, nombre, apellido, correo, pwd) {
     return personas;
 }
 
-let secForm = $("#secform");
-let regForm = $("#regform");
+
 
 // Animación con Callback para darle efecto al formulario de login...
 function animarLogin() {
     $(".login").animate({
             backgroundColor: "rgb(255, 255, 200)",
-            width: "55%",
+            width: "35%",
         },
         200,
         function() {
             $(".login").animate({
                     backgroundColor: "rgb(100, 255, 200)",
-                    width: "50%",
+                    width: "30%",
                 },
                 500
             );
@@ -137,7 +202,7 @@ function getYPush() {
 function submit2() {
     $(".login2").animate({
             backgroundColor: "rgb(200, 500, 200)",
-            width: "55%",
+            width: "35%",
             marginTop: "60px",
             borderRadius: "20px",
             padding: "15px",
@@ -148,7 +213,7 @@ function submit2() {
         function() {
             $(".login2").animate({
                 backgroundColor: "rgb(224, 165, 138)",
-                width: "50%",
+                width: "30%",
                 margin: "80px auto",
                 borderRadius: "10px",
                 padding: "20px",
